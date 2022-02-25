@@ -53,6 +53,7 @@ echo 10 === "10";
 | pipe
 \ backslash
 / slash 
+echo "<hr>";
 
 <?php  
 // melanjutkan tugas pertemuan2
@@ -65,7 +66,9 @@ echo 10 === "10";
 // Var_dump
 
 echo "Nabila Putri Aisyah Insirawati";
+echo "<hr>";
 print "Nabila Putri Aisyah I";
+echo "<hr>";
 
 // Penulisan Sintaks PHP
 // 1. PHP di dalam html
@@ -76,6 +79,7 @@ print "Nabila Putri Aisyah I";
 $nama = "Nabila Putri";
 
 echo "Halo, nama saya $nama";
+echo "<hr>";
 
 // Operator
 // aritmatika
@@ -84,29 +88,32 @@ echo 1 + 1;
 $x = 10;
 $y = 20;
 echo $x + $y;
+echo "<hr>";
 
 // Penggabung string / concattenation / concat
 // .
 $nama_depan = "Nabila";
 $nama_belakang = "Putri";
 echo $nama_depan . $nama_belakang;
-
+echo "<hr>";
 
 // Operator Assignment
 // =, +=, -=, *=, /=, %=, .=
 $x = 1;
 $x += 5;
 echo $x;
+echo "<hr>";
 
 $nama = "Nabila";
 $nama .= " ";
 $nama .= "Putri";
 echo $nama;
-
+echo "<hr>";
 
 // Operator Perbandingan
 // <, >, <=, >=, ==
 var_dump(1 < 5);
+echo "<hr>";
 
 // Operator Identitas
 // ===, !==
@@ -114,8 +121,6 @@ var_dump(1 === "1")
 
 // Operator Logika
 // &&, ||, !
-$x = 10;
-var_dump($x < 20 && $x % 2 == 0);
 ?>
 
 
