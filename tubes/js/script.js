@@ -6,6 +6,7 @@ var container = document.getElementById('container');
 
 // Tambahkan event ketika keyword ditulis
 keyword.addEventListener('keyup', function() {
+    console.log('test')
     // Buat objek AJAX
     var xhr = new XMLHttpRequest();
 

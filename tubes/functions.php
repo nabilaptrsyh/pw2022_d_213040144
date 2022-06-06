@@ -17,14 +17,14 @@ function tambah($data) {
     $nama = htmlspecialchars($data["nama"]);
     $jenis_kelamin = htmlspecialchars($data["jenis_kelamin"]);
     $tanggal_lahir = htmlspecialchars($data["tanggal_lahir"]);
-    $pekerjaan = htmlspecialchars($data["pekerjaan"]);
+    $pekerjaan = htmlspecialchars($data["pekerjaan_id"]);
     // $gambar = htmlspecialchars($data["gambar"]);
     // Upload GAMBAR
     $gambar = upload();
     if( !$gambar ) {
         return false;
     }
-
+    
     $query = "INSERT INTO artis 
                 VALUES
                 ('', '$nama', '$jenis_kelamin', '$tanggal_lahir', '$pekerjaan', '$gambar')
@@ -94,7 +94,7 @@ function ubah($data) {
     $nama = htmlspecialchars($data["nama"]);
     $jenis_kelamin = htmlspecialchars($data["jenis_kelamin"]);
     $tanggal_lahir = htmlspecialchars($data["tanggal_lahir"]);
-    $pekerjaan = htmlspecialchars($data["pekerjaan"]);
+    $pekerjaan = htmlspecialchars($data["pekerjaan_id"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     // Cek apakah user pilih gambar lama atau tidak
@@ -108,7 +108,7 @@ function ubah($data) {
                 nama = '$nama',
                 jenis_kelamin = '$jenis_kelamin',
                 tanggal_lahir = '$tanggal_lahir',
-                pekerjaan = '$pekerjaan',
+                pekerjaan_id = '$pekerjaan',
                 gambar = '$gambar'
                 WHERE id = $id
                 ";
@@ -118,12 +118,13 @@ function ubah($data) {
 }
 
 function cari($keyword) {
-    $query = "SELECT * FROM artis 
+    $query = "SELECT artis.*, pekerjaan.pekerjaan AS nama_pekerjaan FROM artis 
+                JOIN pekerjaan ON artis.pekerjaan_id = pekerjaan.id
                 WHERE
                 nama LIKE '%$keyword%' OR
                 jenis_kelamin LIKE '%$keyword%' OR
                 tanggal_lahir LIKE '%$keyword%' OR
-                pekerjaan LIKE '%$keyword%' OR
+                pekerjaan.pekerjaan LIKE '%$keyword%' OR
                 gambar LIKE '%$keyword%'
                 ";
         return query($query);
@@ -132,6 +133,7 @@ function cari($keyword) {
 function registrasi($data) {
     global $conn;
 
+    
     $username = strtolower(stripslashes($data["username"]));
     $email = strtolower(stripslashes($data["email"]));
     $nomor_hp = strtolower(stripslashes($data["nomor_hp"]));

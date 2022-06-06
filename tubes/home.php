@@ -17,7 +17,6 @@
             <ul>
                 <li><a href="#course">HOME</a></li>
                 <li><a href="#contact">ABOUT</a></li>
-                <li><a href="">SIGN IN</a></li>
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -26,7 +25,7 @@
     <div class="text-box">
         <h1>The World Biggest Entertainment</h1>
         <p>Find out your artist just for a second!<br>Enjoy this website. If you interested this website:</p>
-        <a href="registrasi.php" class="hero-btn">Sign Up to Know More</a>
+        <!-- <a href="registrasi.php" class="hero-btn">Sign Up to Know More</a> -->
     </div>
 
     </section>

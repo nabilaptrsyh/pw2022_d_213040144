@@ -2,14 +2,14 @@
 require '../functions.php';
 $keyword = $_GET["keyword"];
 
-$query = "SELECT * FROM artis 
-            WHERE
-            nama LIKE '%$keyword%' OR
-            jenis_kelamin LIKE '%$keyword%' OR
-            tanggal_lahir LIKE '%$keyword%' OR
-            pekerjaan LIKE '%$keyword%' OR
-            gambar LIKE '%$keyword%'
-            ";
+$query = "SELECT artis.*, pekerjaan.pekerjaan AS nama_pekerjaan 
+          FROM artis 
+          JOIN pekerjaan ON artis.pekerjaan_id = pekerjaan.id
+          WHERE nama LIKE '%$keyword%' OR
+          jenis_kelamin LIKE '%$keyword%' OR
+          tanggal_lahir LIKE '%$keyword%' OR
+          pekerjaan.pekerjaan LIKE '%$keyword%' OR
+          gambar LIKE '%$keyword%'";
 $artis = query($query);
 ?>
 
@@ -32,7 +32,7 @@ $artis = query($query);
             <td><?= $row["nama"]; ?></td>
             <td><?= $row["jenis_kelamin"]; ?></td>
             <td><?= $row["tanggal_lahir"]; ?></td>
-            <td><?= $row["pekerjaan"]; ?></td>
+            <td><?= $row["nama_pekerjaan"]; ?></td>
             <td>
                 <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn badge bg-warning">Change</a> |
                 <a href="hapus.php?id=<?= $row["id"]; ?>" class="btn badge bg-danger" onclick="return confirm('Are you sure?');">Delete</a>

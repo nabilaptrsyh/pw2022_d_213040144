@@ -6,7 +6,7 @@ session_start();
     }
 
 require 'functions.php';
-$artis = query("SELECT * FROM artis");
+$artis = query("SELECT artis.*, pekerjaan.pekerjaan AS nama_pekerjaan FROM artis JOIN pekerjaan ON artis.pekerjaan_id = pekerjaan.id");
 
 if( isset($_POST["cari"]) ) {
     $artis = cari($_POST["keyword"]);
@@ -25,67 +25,10 @@ if( isset($_POST["cari"]) ) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Admin Page</title>
-</head>
-<body>
-
-<a href="logout.php">Log Out</a>
-
-    <h1>Artist List</h1>
-    
-    <!-- TULISAN ADD ARTIST -->
-    <div class="add-artist">
-    <a href="tambah.php" class="btn btn-primary">Add Artist Data</a>
-    </div>
-    <br><br>
-
-    <!-- TOMBOL SEARCH -->
-    <div class="search">
-    <form action="" method="post">
-    <center>
-    <input type="text" name="keyword" size="65" autofocus placeholder="What do you looking for?" autocomplete="off" id="keyword">
-    <button type="submit" name="cari" id="tombol-cari">Search</button>
-    </center>
-    </form>
-    </div>
-    
-    <br>
-
-    <!-- TABEL -->
-    <div id="container">
-    <table style="margin-left:auto;margin-right:auto" border="1" cellpadding="15" cellspacing="0">
-        <tr>
-            <th>No.</th>
-            <th>Picture</th>
-            <th>Full Name</th>
-            <th>Gender</th>
-            <th>Date of Birth</th>
-            <th>Profession</th>
-            <th>Action</th>
-        </tr>
-
-        <?php $i = 1; ?>
-        <?php foreach( $artis as $row ) : ?>
-        <tr>
-            <td><?= $i; ?></td>
-            <td><img src="img/<?= $row["gambar"]; ?>" width="85"></td>
-            <td><?= $row["nama"]; ?></td>
-            <td><?= $row["jenis_kelamin"]; ?></td>
-            <td><?= $row["tanggal_lahir"]; ?></td>
-            <td><?= $row["pekerjaan"]; ?></td>
-            <td>
-                <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn badge bg-warning">Change</a> |
-                <a href="hapus.php?id=<?= $row["id"]; ?>" class="btn badge bg-danger" onclick="return confirm('Are you sure?');">Delete</a>
-            </td>
-        </tr>
-        <?php $i++; ?>
-        <?php endforeach; ?>
-    </table>
-    </div>
-    <script src="js/script.js"></script>
-
     <style>
 
         * {
+            text-align: center;
             background-color: #fff;
         }
 
@@ -94,18 +37,17 @@ if( isset($_POST["cari"]) ) {
             font-size: 50px;
             font-family: 'Poppins', sans-serif;
             color: black;
+            margin-top: 5%;
         }
 
         .add-artist a {
             font-family: 'Poppins', sans-serif;
-            color: #F0F8FF;
             border: 2px solid rgb(204, 204, 204);
             border-radius: 10px;
             padding: 15px;
             display: block;
             width: 15%;
             text-align: center;
-            background-color: #696969;
             margin-right: auto;
             margin-left: auto;
         }
@@ -130,6 +72,65 @@ if( isset($_POST["cari"]) ) {
         }
         
     </style>
+</head>
+<body>
+
+    <h1>Hello, Admin Nabila!</h1>
+    
+    <!-- TULISAN ADD ARTIST -->
+    <div class="add-artist">
+    <br>
+    <a href="tambah.php" class="btn btn-secondary">Add Artist Data</a>
+    <br>
+    <a href="home.php" class="btn btn-secondary">Home Page</a>
+    </div>
+    <br><br>
+
+    <!-- TOMBOL SEARCH -->
+    <div class="search">
+    <form action="" method="post">
+    <input type="text" name="keyword" class="btn" size="65" placeholder="What do you looking for?" autocomplete="off" id="keyword">
+    <button type="submit" name="cari" class="btn btn-secondary" id="tombol-cari">Search</button>
+    </form>
+    </div>
+    
+    <br>
+
+    <!-- TABEL -->
+    <div id="container">
+    <table style="margin-left:auto;margin-right:auto" class="table table-striped table-hover" width="20" border="1" cellpadding="15" cellspacing="0">
+        <tr>
+            <th>No.</th>
+            <th>Picture</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Profession</th>
+            <th>Action</th>
+        </tr>
+
+        <?php $i = 1; ?>
+        <?php foreach( $artis as $row ) : ?>
+        <tr>
+            <td><?= $i; ?></td>
+            <td><img src="img/<?= $row["gambar"]; ?>" width="85"></td>
+            <td><?= $row["nama"]; ?></td>
+            <td><?= $row["jenis_kelamin"]; ?></td>
+            <td><?= $row["tanggal_lahir"]; ?></td>
+            <td><?= $row["nama_pekerjaan"]; ?></td>
+            <td>
+                <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn badge bg-primary">Change</a> |
+                <a href="hapus.php?id=<?= $row["id"]; ?>" class="btn badge bg-warning" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+        <?php $i++; ?>
+        <?php endforeach; ?>
+    </table>
+    </div>
+    <script src="js/script.js"></script>
+    
+    <br>
+    <a href="logout.php" class="btn btn-secondary">Log Out</a>
 
         <!-- Optional JavaScript; choose one of the two! -->
 
