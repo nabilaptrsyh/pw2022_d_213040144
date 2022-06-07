@@ -26,7 +26,7 @@ if( isset($_POST["cari"]) ) {
 
     <title>Admin Page</title>
     <style>
-
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
         * {
             text-align: center;
             background-color: #fff;
@@ -38,10 +38,12 @@ if( isset($_POST["cari"]) ) {
             font-family: 'Poppins', sans-serif;
             color: black;
             margin-top: 5%;
+            font-weight: bold;
         }
 
         .add-artist a {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins';
+            font-weight: bold;
             border: 2px solid rgb(204, 204, 204);
             border-radius: 10px;
             padding: 15px;
@@ -70,6 +72,13 @@ if( isset($_POST["cari"]) ) {
         .tabel img {
             border-radius: 35%;
         }
+
+        tr {
+            font-family:'poppins';
+            font-size:15px;
+        }
+        
+        
         
     </style>
 </head>
@@ -80,9 +89,9 @@ if( isset($_POST["cari"]) ) {
     <!-- TULISAN ADD ARTIST -->
     <div class="add-artist">
     <br>
-    <a href="tambah.php" class="btn btn-secondary">Add Artist Data</a>
+    <a href="tambah.php" class="btn btn-primary">Add Artist Data</a>
     <br>
-    <a href="home.php" class="btn btn-secondary">Home Page</a>
+    <a href="home.php" class="btn btn-primary">Home Page</a>
     </div>
     <br><br>
 
@@ -90,7 +99,7 @@ if( isset($_POST["cari"]) ) {
     <div class="search">
     <form action="" method="post">
     <input type="text" name="keyword" class="btn" size="65" placeholder="What do you looking for?" autocomplete="off" id="keyword">
-    <button type="submit" name="cari" class="btn btn-secondary" id="tombol-cari">Search</button>
+    <button type="submit" name="cari" class="btn btn-primary" id="tombol-cari">Search</button>
     </form>
     </div>
     
@@ -98,7 +107,7 @@ if( isset($_POST["cari"]) ) {
 
     <!-- TABEL -->
     <div id="container">
-    <table style="margin-left:auto;margin-right:auto" class="table table-striped table-hover" width="20" border="1" cellpadding="15" cellspacing="0">
+    <table style="margin-left:auto;margin-right:auto" width="35" border="1" cellpadding="65" cellspacing="0">
         <tr>
             <th>No.</th>
             <th>Picture</th>
@@ -130,7 +139,7 @@ if( isset($_POST["cari"]) ) {
     <script src="js/script.js"></script>
     
     <br>
-    <a href="logout.php" class="btn btn-secondary">Log Out</a>
+    <a href="logout.php" class="btn btn-primary">Log Out</a>
 
         <!-- Optional JavaScript; choose one of the two! -->
 

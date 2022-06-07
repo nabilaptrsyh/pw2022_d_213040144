@@ -77,23 +77,23 @@ if( isset($_POST["login"]) ) {
     <?php endif; ?>
 
             <form action="" method="post">
-                <label for="username">Username:</label>
+                <label for="username" style="color:white;">Username:</label>
                 <br><br>
                 <input type="text" name="username" id="username">
 
                 <br><br>
-                <label for="password">Password:</label>
+                <label for="password" style="color:white;">Password:</label>
                 <br><br>
                 <input type="password" name="password" id="password">
 
                 <br><br>
                 <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember Me</label>
+                <label for="remember" style="color:black;">Remember Me</label>
                 <br><br>
-                <button type="submit" class="btn btn-secondary" name="login">Login</button>
+                <button type="submit" class="btn btn-light" name="login" >Login</button>
 
                 <br><br>
-                <a href="registrasi.php">Don't have an account?</a>
+                <a href="registrasi.php" style="color:lightblue;">Don't have an account?</a>
     </form>
 
     <style>
@@ -105,7 +105,13 @@ if( isset($_POST["login"]) ) {
             font-size: 40px;
             text-align: center;
             margin-top: 10%;
+            color:white;
         }
+        body {
+            background-image:url(./img/entertaintment2.jpg);
+            background-size:cover;
+        }
+       
     </style>
 
     <!-- Optional JavaScript; choose one of the two! -->

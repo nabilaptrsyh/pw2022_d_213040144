@@ -79,7 +79,7 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <h1>If you want to join this website, <br> You can contact me:</h1>
-        <a href="" class="hero-btn">In here!</a>
+        <a href="https://www.instagram.com/nabilaptrsyh" class="hero-btn">In here!</a>
     </section>
 
     <!-- Footer -->
