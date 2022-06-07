@@ -33,6 +33,10 @@ if( isset($_POST["register"]) ) {
 <body>
     <h1>Registration Page</h1>
     <style>
+         @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
+        body {
+            background-color:#D0C9C0;
+        }
         h1 {
             margin-top: 4%;
         }
@@ -40,32 +44,41 @@ if( isset($_POST["register"]) ) {
         label {
             display: block;
         }
+        .form {
+            border:1px solid white;
+            width:300px;
+            border-radius:20px;
+            margin-left:530px;
+            background-color: #EFEAD8;
+            height:500px;
+           
+        }
     </style>
 
-    <form action="" method="post">
+    <form action="" method="post" class="form">
 
                 <br>
-                <label for="username">Username: </label>
+                <label for="username"  style="color:black; font-family:'poppins'; font-weight: bold; ">Username: </label>
                 <input type="text" name="username" id="username" required>
 
                 <br><br>
-                <label for="email">Email: </label>
+                <label for="email"  style="color:black; font-family:'poppins'; font-weight: bold; ">Email: </label>
                 <input type="text" name="email" id="email" required>
 
                 <br><br>
-                <label for="nomor_hp">Phone Number: </label>
+                <label for="nomor_hp"  style="color:black; font-family:'poppins'; font-weight: bold; ">Phone Number: </label>
                 <input type="text" name="nomor_hp" id="nomor_hp" required>
                 
                 <br><br>
-                <label for="password">Password: </label>
+                <label for="password"  style="color:black; font-family:'poppins'; font-weight: bold; ">Password: </label>
                 <input type="password" name="password" id="password" required>
                 
                 <br><br>
-                <label for="password2">Confirmation Password: </label>
+                <label for="password2"  style="color:black; font-family:'poppins'; font-weight: bold; ">Confirmation Password: </label>
                 <input type="password" name="password2" id="password2" required>
                 
                 <br><br>
-                <button type="submit" class="btn btn-secondary" name="register">Sign Up</button> | <a href="login.php" class="btn btn-secondary">Back to Login</a>
+                <button type="submit" class="btn btn-primary" name="register">Sign Up</button> | <a href="login.php" class="btn btn-primary">Back to Login</a>
                 
     </form>
 

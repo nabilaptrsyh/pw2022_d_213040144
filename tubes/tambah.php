@@ -44,37 +44,53 @@ if( isset($_POST["submit"]) ) {
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
         h1 {
-            font-size:50px;
+            font-size:30px;
             font-family:'poppins';
             font-weight: bold;
+            margin-top:20px;
+            text-align:center;
         }
+        body {
+            background-color: #CDC2AE;
+        }
+       .row {
+           justify-content:center;
+       }
+       .btn {
+           margin-left:500px;   
+       }
+       .btn2 {
+           margin-left:290px;
+           border-radius:30px; 
+             
+       }
     </style>
 </head>
 <body>
     <div class="container">
     <h1>Add Artist Data</h1>
-    <a href="index.php" class="btn btn-primary">Go Back</a>
+    <a href="admin.php" class="btn btn-secondary">Go Back</a>
 
     <div class="row mt-3">
         <div class="col-8">
         <form action="" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="nama" class="form-label">Full Name</label>
+            <label for="nama" class="form-label" style="color:black; font-family:'poppins'; font-weight: bold; ">Full Name</label>
             <input type="text" class="form-control" id="nama" name="nama" required>
         </div>
         <form action="" method="post">
         <div class="mb-3">
-            <label for="jenis_kelamin" class="form-label">Gender: </label>
+            <label for="jenis_kelamin" class="form-label" style="color:black; font-family:'poppins'; font-weight: bold; ">Gender: </label>
             <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin">
         </div>
         <form action="" method="post">
         <div class="mb-3">
-            <label for="tanggal_lahir" class="form-label">Date of Birth: </label>
+            <label for="tanggal_lahir" class="form-label" style="color:black; font-family:'poppins'; font-weight: bold; ">Date of Birth: </label>
             <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir">
         </div>
         <form action="" method="post">
         <div class="mb-3">
-            <label for="pekerjaan" class="form-label">Profession: </label>
+            <label for="pekerjaan" class="form-label" style="color:black; font-family:'poppins'; font-weight: bold; ">Profession: </label>
             <select name="pekerjaan_id" id="pekerjaan_id" class="form-control">
                 <?php foreach($pekerjaan as $row): ?>
                     <option value="<?= $row['id']; ?>"><?= $row['pekerjaan']; ?></option>
@@ -83,11 +99,11 @@ if( isset($_POST["submit"]) ) {
         </div>
         <form action="" method="post">
         <div class="mb-3">
-            <label for="gambar" class="form-label">Gambar: </label>
+            <label for="gambar" class="form-label" style="color:black; font-family:'poppins'; font-weight: bold; ">Gambar: </label>
             <input type="file" class="form-control" name="gambar" id="gambar">
         </div>
 
-            <button type="submit"  class="btn btn-primary" name="submit">Tambah Data Artis</button>
+            <button type="submit"  class="btn2 btn-secondary" name="submit">Tambah Data Artis</button>
 
 </div>
 </div>

@@ -29,8 +29,13 @@ if( isset($_POST["cari"]) ) {
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
         * {
             text-align: center;
-            background-color: #fff;
+            background-color:#D0C9C0;
+
         }
+        body {
+            background-color:#D0C9C0;
+        }
+        
 
         h1 {
             text-align: center;

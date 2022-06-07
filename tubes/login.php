@@ -68,35 +68,8 @@ if( isset($_POST["login"]) ) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Login Page</title>
-</head>
-<body>
-    <h1>Login Page</h1>
-
-    <?php if( isset($error) ) : ?>
-        <p style="color: red; font-style: italic;">Username or Password Incorrect!</p>
-    <?php endif; ?>
-
-            <form action="" method="post">
-                <label for="username" style="color:white;">Username:</label>
-                <br><br>
-                <input type="text" name="username" id="username">
-
-                <br><br>
-                <label for="password" style="color:white;">Password:</label>
-                <br><br>
-                <input type="password" name="password" id="password">
-
-                <br><br>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember" style="color:black;">Remember Me</label>
-                <br><br>
-                <button type="submit" class="btn btn-light" name="login" >Login</button>
-
-                <br><br>
-                <a href="registrasi.php" style="color:lightblue;">Don't have an account?</a>
-    </form>
-
     <style>
+         @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
         * {
             text-align: center;
         }
@@ -108,11 +81,49 @@ if( isset($_POST["login"]) ) {
             color:white;
         }
         body {
-            background-image:url(./img/entertaintment2.jpg);
+            background-color: #CDC2AE;
             background-size:cover;
+        }
+        .form {
+            border:1px solid white;
+            width:300px;
+            border-radius:20px;
+            margin-left:530px;
+            background-color:white;
+            height:400px;
+            padding-top:20px;
         }
        
     </style>
+</head>
+<body>
+    <h1>Login Page</h1>
+
+    <?php if( isset($error) ) : ?>
+        <p style="color: red; font-style: italic;">Username or Password Incorrect!</p>
+    <?php endif; ?>
+
+            <form action="" method="post" class="form">
+                <label for="username" style="color:black; font-family:'poppins'; font-weight: bold; ">Username:</label>
+                <br><br>
+                <input type="text" name="username" id="username">
+
+                <br><br>
+                <label for="password" style="color:black;  font-family:'poppins'; font-weight: bold;">Password:</label>
+                <br><br>
+                <input type="password" name="password" id="password">
+
+                <br><br>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember" style="color:black;  font-family:'poppins'; font-weight: bold;">Remember Me</label>
+                <br><br>
+                <button type="submit" class="btn btn-light" name="login" >Login</button>
+
+                <br><br>
+                <a href="registrasi.php" style="color:blue;  font-family:'poppins'; font-weight: bold;">Don't have an account?</a>
+    </form>
+
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
