@@ -30,8 +30,9 @@ if( isset($_POST["cari"]) ) {
         * {
             text-align: center;
             background-color:#D0C9C0;
-
+            color: black;
         }
+        
         body {
             background-color:#D0C9C0;
         }
@@ -67,20 +68,21 @@ if( isset($_POST["cari"]) ) {
             border-radius: 5px;
         }
 
-        .tabel {
+        .table {
             font-family: 'Poppins', sans-serif;
             text-align: center;
+            color: black;
             position: relative;
             border-radius: 5px;
         }
 
-        .tabel img {
+        .table img {
             border-radius: 35%;
         }
 
         tr {
             font-family:'poppins';
-            font-size:15px;
+            font-size: 15px;
         }
         
         
@@ -112,7 +114,7 @@ if( isset($_POST["cari"]) ) {
 
     <!-- TABEL -->
     <div id="container">
-    <table style="margin-left:auto;margin-right:auto" width="35" border="1" cellpadding="65" cellspacing="0">
+    <table class="table table-success table-striped" style="margin-left: auto; margin-right: auto" width="35" border="1" cellpadding="65" cellspacing="0">
         <tr>
             <th>No.</th>
             <th>Picture</th>
