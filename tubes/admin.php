@@ -147,6 +147,14 @@ if( isset($_POST["cari"]) ) {
     
     <br>
     <a href="logout.php" class="btn btn-primary">Log Out</a>
+    <br>
+    <body>
+        <div class="container">
+            <button class="btn btn-danger mt-3" onclick="window.print()">
+        <i class="bi bi-journal-plus">Cetak PDF</i>
+        </button>
+        </div>
+    </body>
 
         <!-- Optional JavaScript; choose one of the two! -->
 
