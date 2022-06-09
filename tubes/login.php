@@ -23,38 +23,37 @@ if( isset($_SESSION["login"]) ) {
 }
 
 
-if( isset($_POST["login"]) ) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
+    global $conn;
     $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 
-    // Cek username
-    if( mysqli_num_rows($result) === 1 ) {
+    //cek email
+    if(mysqli_num_rows($result) === 1 ) {
 
-        // Cek password
+        //cek password
         $row = mysqli_fetch_assoc($result);
-        if(password_verify($password, $row["password"]) ) {
-            // Set session
-            $_SESSION["login"] = true;
+        if(password_verify($password, $row["password"])) {
 
-            // Cek remember me
-            if( isset($_POST['remember']) ) {
-                // Buat cookie
-                setcookie('id', $row['id'], time() + 60);
-                setcookie('key', hash('sha256', $row['username']), time()+60);
+            //cek role admin
+            if ($row['role']=="admin") {
+                $_SESSION['id_admin'] = $row['id'];
+                $_SESSION['role'] = "admin";
+                  header("location:admin.php");
+            } else if ($row['role'] == "user") {
+                $_SESSION['id_user'] = $row['id'];
+                $_SESSION['role'] = "user";
+                  header("location:user.php");
             }
-
-            header("Location: admin.php");
-            exit;
         }
     }
 
     $error = true;
-
-
 }
 ?>
+
 
 
 <!DOCTYPE html>

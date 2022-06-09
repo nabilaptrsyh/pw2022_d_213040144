@@ -2,11 +2,11 @@
 require 'functions.php';
 $pekerjaan = query("SELECT * FROM pekerjaan");
 
-session_start();
-if( !isset($_SESSION["login"]) ) {
-    header("Location: login.php");
-    exit;
-}
+// session_start();
+// if( !isset($_SESSION["login"]) ) {
+//     header("Location: login.php");
+//     exit;
+// }
 
 if( isset($_POST["submit"]) ) {
 

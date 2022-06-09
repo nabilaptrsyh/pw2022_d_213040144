@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 03:25 AM
+-- Generation Time: Jun 09, 2022 at 04:06 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -88,15 +88,17 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nomor_hp` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','user','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `nomor_hp`, `password`) VALUES
-(8, 'nabilaptrsyh', 'lllalanabila300@gmail.com', '085782889270', '$2y$10$AOukccyR/KIQ/9OXruLvWOf/6W3N82qGK2xqkM75LH8n9IjabIilm');
+INSERT INTO `users` (`id`, `username`, `email`, `nomor_hp`, `password`, `role`) VALUES
+(8, 'nabilaptrsyh', 'lllalanabila300@gmail.com', '085782889270', '$2y$10$AOukccyR/KIQ/9OXruLvWOf/6W3N82qGK2xqkM75LH8n9IjabIilm', 'admin'),
+(18, 'audi', 'audi@gmail.com', '085782889270', '$2y$10$OC0dB3Nxcinba3QU6BC9Q.emA48mXSFMCfp03tcldUuldCK6U/K/.', 'user');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +131,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `artis`
 --
 ALTER TABLE `artis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `pekerjaan`
@@ -141,7 +143,7 @@ ALTER TABLE `pekerjaan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

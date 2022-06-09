@@ -91,12 +91,10 @@ if( isset($_POST["cari"]) ) {
 </head>
 <body>
 
-    <h1>Hello, Admin Nabila!</h1>
+    <h1>Hello, User!</h1>
     
     <!-- TULISAN ADD ARTIST -->
     <div class="add-artist">
-    <br>
-    <a href="tambah.php" class="btn btn-primary">Add Artist Data</a>
     <br>
     <a href="index.php" class="btn btn-primary">Home Page</a>
     </div>
@@ -122,7 +120,6 @@ if( isset($_POST["cari"]) ) {
             <th>Gender</th>
             <th>Date of Birth</th>
             <th>Profession</th>
-            <th>Action</th>
         </tr>
 
         <?php $i = 1; ?>
@@ -134,10 +131,6 @@ if( isset($_POST["cari"]) ) {
             <td><?= $row["jenis_kelamin"]; ?></td>
             <td><?= $row["tanggal_lahir"]; ?></td>
             <td><?= $row["nama_pekerjaan"]; ?></td>
-            <td>
-                <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn badge bg-primary">Change</a> |
-                <a href="hapus.php?id=<?= $row["id"]; ?>" class="btn badge bg-warning" onclick="return confirm('Are you sure?');">Delete</a>
-            </td>
         </tr>
         <?php $i++; ?>
         <?php endforeach; ?>

@@ -25,7 +25,7 @@
     <div class="text-box">
         <h1>The World Biggest Entertainment</h1>
         <p>Find out your artist just for a second!<br>Enjoy this website. If you interested this website:</p>
-        <a href="login.php" class="hero-btn">Are u an admin?</a>
+        <a href="login.php" class="hero-btn">Login First</a>
     </div>
 
     </section>

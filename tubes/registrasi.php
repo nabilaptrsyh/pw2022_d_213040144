@@ -1,15 +1,17 @@
 <?php 
-require 'functions.php';
+    require 'functions.php';
 
-if( isset($_POST["register"]) ) {
-    if( registrasi($_POST) > 0 ) {
-        echo "<script>
-                alert('User baru berhasil ditambahkan!');
-              </script>";
-    } else {
-        echo mysqli_error($conn);
+    if(isset($_POST["register"]) ) {
+
+        if(register($_POST) > 0 ) {
+            echo "<script>
+                    alert('Enjoy Your Visit, You Are Successfully Registered!');
+                    document.location.href = 'login.php';
+                    </script>";
+        } else {
+            echo mysqli_error($conn);
+        }
     }
-}
 
 ?>
 
