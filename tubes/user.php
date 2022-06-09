@@ -24,7 +24,7 @@ if( isset($_POST["cari"]) ) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Admin Page</title>
+    <title>User Page</title>
     <style>
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:wght@100;700&display=swap");
         * {
@@ -144,7 +144,7 @@ if( isset($_POST["cari"]) ) {
     <body>
         <div class="container">
             <button class="btn btn-danger mt-3" onclick="window.print()">
-        <i class="bi bi-journal-plus">Cetak PDF</i>
+        <i class="bi bi-journal-plus">Print PDF</i>
         </button>
         </div>
     </body>

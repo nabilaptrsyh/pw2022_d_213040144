@@ -12,14 +12,14 @@ $id = $_GET["id"];
 if( hapus($id) > 0 ) {
     echo "
         <script>
-        alert('Data berhasil dihapus!');
+        alert('Delete Data Success!');
         document.location.href = 'admin.php';
         </script>
         ";
 } else {
     echo "
         <script>
-        alert('Data gagal ditambahkan!');
+        alert('Delete Data Declined!');
         document.location.href = 'admin.php';
         </script>
         ";

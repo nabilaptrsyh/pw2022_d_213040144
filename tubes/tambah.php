@@ -16,14 +16,14 @@ if( isset($_POST["submit"]) ) {
         if( tambah($_POST) > 0 ) {
             echo "
                 <script>
-                alert('Data berhasil ditambahkan!');
+                alert('Add Data Successed!');
                 document.location.href = 'admin.php';
                 </script>
                 ";
         } else {
             echo "
                 <script>
-                alert('Data gagal ditambahkan!');
+                alert('Add Data Declined!');
                 document.location.href = 'admin.php';
                 </script>
                 ";

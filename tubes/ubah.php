@@ -20,14 +20,14 @@ if( isset($_POST["submit"]) ) {
         if( ubah($_POST) > 0 ) {
             echo "
                 <script>
-                alert('Data berhasil diubah!');
+                alert('Upgrade Data Success!');
                 document.location.href = 'admin.php';
                 </script>
                 ";
         } else {
             echo "
                 <script>
-                alert('Data gagal diubah!');
+                alert('Upgrade Data Declined!');
                 document.location.href = 'admin.php';
                 </script>
                 ";
