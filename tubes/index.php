@@ -11,7 +11,7 @@
 <body>
     <section class="header">
     <nav>
-        <a href="home.php"><img src=""></a>
+        <a href="index.php"><img src=""></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
@@ -25,7 +25,7 @@
     <div class="text-box">
         <h1>The World Biggest Entertainment</h1>
         <p>Find out your artist just for a second!<br>Enjoy this website. If you interested this website:</p>
-        <!-- <a href="registrasi.php" class="hero-btn">Sign Up to Know More</a> -->
+        <a href="login.php" class="hero-btn">Are u an admin?</a>
     </div>
 
     </section>

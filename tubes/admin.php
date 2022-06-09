@@ -98,7 +98,7 @@ if( isset($_POST["cari"]) ) {
     <br>
     <a href="tambah.php" class="btn btn-primary">Add Artist Data</a>
     <br>
-    <a href="home.php" class="btn btn-primary">Home Page</a>
+    <a href="index.php" class="btn btn-primary">Home Page</a>
     </div>
     <br><br>
 
