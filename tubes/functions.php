@@ -85,8 +85,6 @@ function hapus($id) {
     return mysqli_affected_rows($conn);
 }
 
-
-
 function ubah($data) {
     global $conn;
 
@@ -199,6 +197,7 @@ function register($data) {
 
         return false;
     }
+    
 //enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
