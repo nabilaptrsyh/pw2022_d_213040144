@@ -142,7 +142,7 @@ if( isset($_POST["cari"]) ) {
         <?php endforeach; ?>
     </table>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/scriptadmin.js"></script>
     
     <br>
     <a href="logout.php" class="btn btn-primary">Log Out</a>

@@ -59,7 +59,7 @@ function upload() {
               return false;
     }
 
-    // // Cek jika ukuran file gambar terlalu besar
+    // Cek jika ukuran file gambar terlalu besar
     // if( $ukuranFile > 100000 ) {
     //     echo "<script>
     //             alert('Ukuran file terlalu besar!');
@@ -128,46 +128,6 @@ function cari($keyword) {
         return query($query);
 }
 
-// function registrasi($data) {
-//     global $conn;
-
-    
-//     $username = strtolower(stripslashes($data["username"]));
-//     $email = strtolower(stripslashes($data["email"]));
-//     $nomor_hp = strtolower(stripslashes($data["nomor_hp"]));
-//     $password = mysqli_real_escape_string($conn, $data["password"]);
-//     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
-
-//     // Cek username udah ada atau belum
-//     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
-
-//     if( mysqli_fetch_assoc($result) ) {
-//         echo "<script>
-//               alert('Username telah terdaftar!');
-//               </script>";
-
-//         return false;
-//     }
-
-//     // Cek konfirmasi password
-//     if( $password !== $password2 ) {
-//         echo "<script>
-//               alert('Konfirmasi password tidak sesuai!');
-//               </script>";
-//               return false;
-//     }
-
-//     // Esnkripsi Password
-//     $password = password_hash($password, PASSWORD_DEFAULT);
-
-
-//     // Tambahkan user ke database
-//     mysqli_query($conn, "INSERT INTO users VALUE('', '$username', '$email', '$nomor_hp', '$password')");
-
-//     return mysqli_affected_rows($conn);
-
-// }
-
 // register akun
 function register($data) {
     global $conn;
@@ -179,11 +139,11 @@ function register($data) {
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
 
     //cek email
-    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT email FROM user WHERE email = '$email'");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
                 alert('Your Email Already Registered, Please Try Another Email');
-                document.location.href = 'registrasi.php';
+                document.location.href = 'register.php';
                 </script>";
         return false;
     }

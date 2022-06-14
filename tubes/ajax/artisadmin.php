@@ -21,7 +21,7 @@ $artis = query($query);
             <th>Gender</th>
             <th>Date of Birth</th>
             <th>Profession</th>
-            <!-- <th>Action</th> -->
+            <th>Action</th>
         </tr>
 
         <?php $i = 1; ?>
@@ -33,10 +33,10 @@ $artis = query($query);
             <td><?= $row["jenis_kelamin"]; ?></td>
             <td><?= $row["tanggal_lahir"]; ?></td>
             <td><?= $row["nama_pekerjaan"]; ?></td>
-            <!-- <td>
+            <td>
                 <a href="ubah.php?id=<?= $row["id"]; ?>" class="btn badge bg-warning">Change</a> |
                 <a href="hapus.php?id=<?= $row["id"]; ?>" class="btn badge bg-danger" onclick="return confirm('Are you sure?');">Delete</a>
-            </td> -->
+            </td>
         </tr>
         <?php $i++; ?>
         <?php endforeach; ?>
